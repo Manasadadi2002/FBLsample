@@ -1,0 +1,35 @@
+﻿@model IEnumerable<FBLmannagement.Models.AddResult>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<h2>
+    Adding New Match
+</h2>
+
+
+@Html.ActionLink("ADDED", "ADD")
+@foreach (var a in Model)
+{
+    <p>
+        Match ID : @a.MatchID
+    </p>
+    <p>
+        Team Name-1 : @a.Teamname1
+    </p>
+    <p>
+        Team Name-2 : @a.Teamname2
+    </p>
+    <p>
+        Status of the Match : @a.StatusTeam
+    </p>
+    <p>
+        Winning Teamname : @a.WinningTeam
+
+    </p>
+    @Html.ActionLink("Edit", "Edit") <span>&nbsp;</span>
+    @Html.ActionLink("Delete", "Delete")
+    <hr />
+}
+

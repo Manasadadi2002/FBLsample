@@ -1,0 +1,36 @@
+﻿@model  FBLmannagement.Models.AddResult
+@{
+    ViewBag.Title = "ADD";
+}
+
+
+<h2>ADD</h2>
+@using (Html.BeginForm("ADDED", "Add"))
+{
+    <p>
+        MatchID: @Html.TextBoxFor(a => a.MatchID)
+    </p>
+
+    <p>
+        Teamname1: @Html.TextBoxFor(a => a.Teamname1)
+    </p>
+
+    <p>
+        Teamname2: @Html.TextBoxFor(a => a.Teamname2)
+
+    </p>
+    string[] s = { "WIN","DRAW" };
+    SelectList list = new SelectList(s);
+    <p>
+        Status: @Html.DropDownList("dropdownlist1", list,
+  "SELECT")
+    </p>
+
+    <p>
+        Winning Team:@Html.TextBoxFor(a => a.WinningTeam)
+    </p>
+
+    <input type="submit" value="Add details" />
+}
+
+
